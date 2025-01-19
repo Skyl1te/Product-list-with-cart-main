@@ -1,0 +1,50 @@
+@import '../abstracts/_variables.scss';
+
+.buying-cart {
+	// background-image: url('../../assets/images/illustration-empty-cart.svg');
+	// background-color: $Rose-50;
+	// background-size: auto;
+	// background-position: center;
+	// background-repeat: no-repeat;
+	background: url('../../assets/images/illustration-empty-cart.svg') no-repeat center / auto, $Rose-50;
+	z-index: 1000;
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 300px;
+	width: 100%;
+	margin-top: 3rem;
+	border-radius: .5rem;
+	padding: 1rem;
+	overflow: auto;
+
+	&__title {
+		font-size: 1.5rem;
+		color: $Red;
+		font-weight: 600;
+		margin-bottom: 2rem;
+	}
+
+	&__quantity {
+		font-weight: 900;
+		
+	}
+	
+	&__subtitle {
+		position: absolute;
+		bottom: 0;
+		margin-bottom: 0.7rem;
+		align-self: center;		
+		color: $Rose-500;
+		font-weight: 500;
+		text-align: center;
+	}
+}
+
+@media(min-width: 1040px) {
+	.buying-cart {
+		width: 800px;
+		// height: 500px;
+	}
+}

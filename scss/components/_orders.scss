@@ -1,0 +1,143 @@
+@import '../abstracts/variables';
+
+.orders {
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+}
+.order {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: .15rem solid $Rose-100;
+	padding-bottom: 1.2rem;
+
+		&__image {
+			display: none;
+			img {
+				width: 50px;
+				height: 50px;
+			}
+		}
+		&__text {
+			color: $Rose-500;
+		}
+
+		&__title {
+			margin-bottom: 0.35rem;
+			font-weight: 600;
+			color: $Rose-900;
+		}
+
+		&__subtitle {
+			display: flex;
+			gap: .65rem;
+		}
+
+		&__amount {
+			color: $Red;
+			font-weight: 700;
+
+			&::after {
+				content:'x';
+			}
+		}
+
+		&__price {
+			margin-left: .5rem;
+			&::before {
+				content: '@ $';
+			}
+		}
+
+		&__total-price {
+			font-weight: 600;
+			&::before {
+				content: '$';
+			}
+		}
+
+		&__cancel-btn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			img {
+				width: 1.4rem;
+				height: auto;
+				border: 1px solid $Rose-400;
+				padding: .2rem;
+				border-radius: 1rem;
+			}
+		}
+}
+
+.orders-total {
+	display: none;
+	justify-content: space-between;
+	margin-top: 2rem;
+
+	&__text {
+		color: $Rose-500;
+		font-weight: 500;
+	}
+
+	&__price {
+		color: $Rose-900;
+		font-size: 1.3rem;
+
+		&::before {
+			content: '$';
+		}
+	}
+}
+
+.order-delivery {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	gap: .6rem;
+	padding: .9rem;
+	background: $Rose-100;
+	border-radius: .4rem;
+	margin-top: 2rem;
+
+	&__icon {
+		width: 20px;
+		height: 21px;
+	}
+
+	&__text {
+		color: $Rose-900;
+		font-weight: 400;
+		font-size: .8rem;
+
+		span {
+			font-weight: 600;
+		}
+	}
+}
+.order-submit-btn {
+	display: none;
+	width: 100%;
+	background-color: $Red;
+	color: $Rose-50;
+	padding: 1rem;
+	border-radius: 2rem;
+	border: none;
+	font-weight: 500;
+	transition: all .2s ease-out;
+	font-family: "Red Hat Text", serif;
+	cursor: pointer;
+	margin-top: 1.2rem;
+
+	&:hover {
+		opacity: .9;
+		transition: all .2s ease-in-out;
+
+	}
+}
+
+#secondTotal {
+	display: none;
+}
