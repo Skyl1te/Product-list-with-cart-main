@@ -12,10 +12,10 @@ displayTotalPrice.textContent = totalPrice
 buyingQuantity.textContent = totalAmount
 
 async function getProductCardsData(url = 'data.json') {
-    const response = await fetch(url)
-    const data = await response.json()
+	const response = await fetch(url)
+	const data = await response.json()
 
-    return data
+	return data
 }
 
 class productCardsItem {
@@ -25,7 +25,7 @@ class productCardsItem {
 		this.category = category
 		this.price = price
 		this.container = document.querySelector(container)
-		this.quantityProduct = 0 
+		this.quantityProduct = 0
 		this.totalProductAmount = 0
 
 		this._createCard()
@@ -81,7 +81,7 @@ class productCardsItem {
 		submitBtn.addEventListener('click', () => {
 			this.confirmOrder(buyingCart)
 		})
-		
+
 		confirmBtn.addEventListener('click', () => {
 			this.startNewOrder()
 		})
@@ -128,7 +128,7 @@ class productCardsItem {
 		if (window.innerWidth >= 768) {
 			buyingCart.style.left = '50%'
 			buyingCart.style.top = '50%'
-			buyingCart.style.transform = 'translate(-50%, -50%)' 
+			buyingCart.style.transform = 'translate(-50%, -50%)'
 		}
 
 		const overlay = document.createElement('div')
@@ -138,7 +138,7 @@ class productCardsItem {
 		overlay.style.width = '100%'
 		overlay.style.height = '100%'
 		overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.1)'
-		overlay.style.zIndex = '999' 
+		overlay.style.zIndex = '999'
 		document.body.appendChild(overlay)
 
 		document.body.style.overflow = 'hidden'
@@ -147,7 +147,7 @@ class productCardsItem {
 	startNewOrder() {
 		window.location.reload()
 	}
-	
+
 	toggleQuantityButtons(cardElement) {
 		const quantityBtns = cardElement.querySelectorAll('.product-card__quantity-btn')
 		const displayQuantity = cardElement.querySelector('.product-card__add-text')
@@ -211,7 +211,7 @@ class productCardsItem {
 	checkTotal() {
 		if (totalAmount <= 0) {
 			buyingCart.querySelector('.buying-cart__subtitle').style.display = 'block'
-			buyingCart.style.background = 'url("../../assets/images/illustration-empty-cart.svg") no-repeat center / auto, hsl(20, 50%, 98%)'
+			buyingCart.style.background = 'url("../assets/images/illustration-empty-cart.svg") no-repeat center / auto, hsl(20, 50%, 98%)'
 			buyingCart.querySelector('.orders-total').style.display = 'none'
 			buyingCart.querySelector('.order-delivery').style.display = 'none'
 			buyingCart.querySelector('.order-submit-btn').style.display = 'none'
@@ -223,7 +223,7 @@ class productCardsItem {
 			buyingCart.querySelector('.order-submit-btn').style.display = 'block'
 		}
 	}
-	
+
 
 	addProductToList(buyingCart, cardElement) {
 		if (this.totalProductAmount > 1) {
@@ -268,22 +268,22 @@ class productCardsItem {
 	}
 
 	removeProductOfList(buyingCart) {
-    if (this.totalProductAmount >= 1) {
-        const orderAmount = buyingCart.querySelector(`.order[data-name="${this.name}"]`)
-        if (orderAmount) {
-            const amountElement = orderAmount.querySelector('.order__amount')
-            const totalPriceElement = orderAmount.querySelector('.order__total-price')
-            
-            amountElement.textContent = this.totalProductAmount
-            totalPriceElement.textContent = (this.price * this.totalProductAmount).toFixed(2)
-        }
-    } else {
-        const orderToRemove = buyingCart.querySelector(`.order[data-name="${this.name}"]`)
-        if (orderToRemove) {
-            buyingCart.querySelector('.orders').removeChild(orderToRemove) 
-        }
-    }
-}
+		if (this.totalProductAmount >= 1) {
+			const orderAmount = buyingCart.querySelector(`.order[data-name="${this.name}"]`)
+			if (orderAmount) {
+				const amountElement = orderAmount.querySelector('.order__amount')
+				const totalPriceElement = orderAmount.querySelector('.order__total-price')
+
+				amountElement.textContent = this.totalProductAmount
+				totalPriceElement.textContent = (this.price * this.totalProductAmount).toFixed(2)
+			}
+		} else {
+			const orderToRemove = buyingCart.querySelector(`.order[data-name="${this.name}"]`)
+			if (orderToRemove) {
+				buyingCart.querySelector('.orders').removeChild(orderToRemove)
+			}
+		}
+	}
 
 	removeProduct(buyingCart, cardElement) {
 		const orderToRemove = buyingCart.querySelector(`.order[data-name="${this.name}"]`)
