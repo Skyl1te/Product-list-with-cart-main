@@ -211,7 +211,7 @@ class productCardsItem {
 	checkTotal() {
 		if (totalAmount <= 0) {
 			buyingCart.querySelector('.buying-cart__subtitle').style.display = 'block'
-			buyingCart.style.background = 'url("../assets/images/illustration-empty-cart.svg") no-repeat center / auto, hsl(20, 50%, 98%)'
+			buyingCart.style.background = 'url("assets/images/illustration-empty-cart.svg") no-repeat center / auto, hsl(20, 50%, 98%)'
 			buyingCart.querySelector('.orders-total').style.display = 'none'
 			buyingCart.querySelector('.order-delivery').style.display = 'none'
 			buyingCart.querySelector('.order-submit-btn').style.display = 'none'
