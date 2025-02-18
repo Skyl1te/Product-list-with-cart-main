@@ -1,0 +1,10 @@
+@import '../abstracts/variables';
+
+html[data-theme="light"] {
+	#moon {
+		display: none;
+	}
+	#sun {
+		display: block;
+	}
+}

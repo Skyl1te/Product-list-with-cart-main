@@ -1,0 +1,22 @@
+@import '../abstracts/variables';
+
+
+html[data-theme="dark"] {
+	
+	filter: invert(1);
+
+	#moon {
+		display: block;
+	}
+	#sun {
+		display: none;
+	}
+
+	#changeThemeBtn {
+		background-color: $Rose-900;
+	}
+
+	.product-card__image, .order__image img {
+		filter: invert(1);
+	}
+}

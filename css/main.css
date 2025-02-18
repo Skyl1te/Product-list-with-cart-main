@@ -17,7 +17,7 @@ html {
 
 body {
   font-size: 1rem;
-  color: hsl(14, 65%, 9%);
+  color: var(--rose900);
   font-style: normal;
   font-family: "Red Hat Text", serif;
 }
@@ -306,6 +306,26 @@ body {
   display: none;
 }
 
+#changeThemeBtn {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: end;
+  right: 0;
+  top: 0;
+  width: 2.3rem;
+  height: 2.3rem;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  background-color: hsl(0, 0%, 93%);
+  cursor: pointer;
+  z-index: 3;
+}
+#changeThemeBtn img {
+  width: 100%;
+}
+
 .wrapper {
   position: relative;
   width: 100%;
@@ -327,4 +347,26 @@ body {
     gap: 5rem;
     padding: 5rem;
   }
+}
+html[data-theme=dark] {
+  filter: invert(1);
+}
+html[data-theme=dark] #moon {
+  display: block;
+}
+html[data-theme=dark] #sun {
+  display: none;
+}
+html[data-theme=dark] #changeThemeBtn {
+  background-color: hsl(14, 65%, 9%);
+}
+html[data-theme=dark] .product-card__image, html[data-theme=dark] .order__image img {
+  filter: invert(1);
+}
+
+html[data-theme=light] #moon {
+  display: none;
+}
+html[data-theme=light] #sun {
+  display: block;
 }

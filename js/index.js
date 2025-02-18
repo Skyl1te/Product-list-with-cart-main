@@ -320,3 +320,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 })
 
+
+window.addEventListener('load', () => {
+	document.documentElement.setAttribute('data-theme', 'light')
+})
+
+changeThemeBtn.addEventListener('click', () => {
+	document.documentElement.setAttribute('data-theme', 
+		document.documentElement.getAttribute('data-theme') == 'light' ? 'dark' : 'light')
+})
